@@ -9,4 +9,7 @@ import com.woniu.spring.annotation.Component;
  */
 @Component
 public class OrderService {
+    public void order(String name) {
+        System.out.println("order->" + name);
+    }
 }

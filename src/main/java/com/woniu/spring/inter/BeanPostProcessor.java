@@ -5,7 +5,7 @@ package com.woniu.spring.inter;
 * */
 public interface BeanPostProcessor {
     //实例化、依赖注入完毕，在调用显示的初始化之前完成一些定制的初始化任务
-    public void postProcessBeforeInitialization(String beanName,Object bean);
+    public Object postProcessBeforeInitialization(String beanName,Object bean);
     //实例化、依赖注入、初始化完毕时执行
-    public void postProcessAfterInitialization(String beanName,Object bean);
+    public Object postProcessAfterInitialization(String beanName,Object bean);
 }
