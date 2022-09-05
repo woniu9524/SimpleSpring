@@ -3,7 +3,7 @@ package com.woniu.spring;
 /**
  * @Author: zhangcheng
  * @CreateTime: 2022-09-04  23:59
- * @Description: TODO
+ * @Description: BeanDefinition
  */
 public class BeanDefinition {
     private Class type;//bean的类型

@@ -3,6 +3,8 @@ package com.woniu.service;
 import com.woniu.spring.annotation.Autowired;
 import com.woniu.spring.annotation.Component;
 import com.woniu.spring.annotation.Scope;
+import com.woniu.spring.inter.BeanNameAware;
+import com.woniu.spring.inter.InitializingBean;
 
 /**
  * @Author: zhangcheng
@@ -12,11 +14,24 @@ import com.woniu.spring.annotation.Scope;
 
 @Scope("prototype")
 @Component
-public class UserService {
+public class UserService implements BeanNameAware , InitializingBean {
     @Autowired
     private OrderService orderService;
 
-    public void test(){
+    private String beanName;
+
+    public void test() {
         System.out.println(orderService);
+        System.out.println(beanName);
+    }
+
+    @Override
+    public void setBeanName(String beanName) {
+        this.beanName=beanName;
+    }
+
+    @Override
+    public void afterPropertiesSet() {
+        System.out.println("初始化完成");
     }
 }
